@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Об'єднання співласників багатоквартирних будинків</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render "layouts/shim" %>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="description" content=". ">
+    <meta name="keywords" content="ОНЛАЙН сервіс об'єднаня співвласників багатоквартих будинків">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/media.css" />
+
+    <script type="text/javascript">
+      hs.graphicsDir = '/uploads/images/graphics/';
+      hs.align = 'center';
+      hs.transitions = ['expand', 'crossfade'];
+      hs.fadeInOut = true;
+      hs.outlineType = 'glossy-dark';
+      hs.wrapperClassName = 'dark';
+      hs.captionEval = 'this.a.title';
+      hs.numberPosition = 'caption';
+      hs.useBox = true;
+      hs.width = 700;
+      hs.height = 600;
+      hs.dimmingOpacity = 0.8;
+
+      // Add the slideshow providing the controlbar and the thumbstrip
+      hs.addSlideshow({
+        //slideshowGroup: 'group1',
+        interval: 5000,
+        repeat: false,
+        useControls: true,
+        fixedControls: 'fit',
+        overlayOptions: {
+          position: 'bottom center',
+          opacity: 0.75,
+          hideOnMouseOut: true
+        },
+      thumbstrip: {
+        position: 'above',
+        mode: 'horizontal',
+        relativeTo: 'expander'
+        }
+      });
+
+    // Make all images animate to the one visible thumbnail
+    var miniGalleryOptions1 = {
+      thumbnailId: 'thumb1'
+      }
+    </script>
+
+  </head>
+  <div class="wrapper">
+    <body>
+      <div class="row">
+        <%= render "layouts/header" %>
+      </div> 
+      <div class="container">
+        <%= yield %>
+      </div>    
+    </body>
+  </div>
+</html>
