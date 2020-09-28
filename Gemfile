@@ -57,8 +57,6 @@ group :development, :test do
   #gem 'rspec-rails'
   #gem 'shoulda-matchers'
   #gem 'spork'
-  
-
   #gem 'spork-rails'
   #gem 'guard-spork'
   #gem 'guard-rspec'
