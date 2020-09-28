@@ -54,6 +54,10 @@ textarea {
  resize: vertical;
 }
 
+.main-menu {
+  padding-right: 3%;
+  
+}
 .center { 
     text-align: vertical;
     h1 { 
@@ -226,8 +230,8 @@ header {
   margin-right: 5%;
   margin-top:   5%;
   font-size:    1.2em;
-   width:   9%;
-   height:  7%;
+   width:   40%;
+   height:  40%;
 
   &:hover {
     color: #000;
