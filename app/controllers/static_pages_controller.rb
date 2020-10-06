@@ -18,6 +18,9 @@ class StaticPagesController < ApplicationController
    def about
    end
 
+   def contact
+   end
+
    def filter_group_kats
        $filter_value = []
        $filter_value[1] = 0
