@@ -42,32 +42,33 @@ class UsersController < ApplicationController
   end
 
   def new
-    #@user = User.new
+    @user = User.new
  end
 
   def show
-    #@user = User.find(params[:id])
-    #@microposts = @user.microposts.paginate(page: params[:page])
+    @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
   
   def create
     @user = User.new(user_params)
     @user.admin = user_params
 
-    respond_to do |format|
+#  respond_to do |format|
       if @user.save
-         sign_in @user
-#         UserMailer.welcome_email(@user).deliver
-
-         format.html { render "orders/info_orders" }
- #        format.json { render json: @user, status: :created, location: @user }
-         flash.now[:success] = "Ваш личный кабинет создан успешно!"
+#       sign_in @user
+#       UserMailer.welcome_email(@user).deliver
+        redirect_to @user
+ #     format.html { render "orders/info_orders" }
+#      format.json { render json: @user, status: :created, location: @user }
+       flash.now[:success] = "Ваш личный кабинет создан успешно!"
       else
-         format.html { render action: 'new' }
-         flash.now[:danger] = "Ваш личный кабинет не создан! 
-         Не заполены или неверно заполнены необходимые поля."
+#       format.html { render action: 'new' }
+        render "new"
+        flash.now[:danger] = "Ваш личный кабинет не создан! 
+        Не заполены или неверно заполнены необходимые поля."
       end
-    end
+#  end
   end
   
 
@@ -137,8 +138,8 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:name, :city, :last_name, :email, :phone,
-                                    :password, :password_confirmation, :adress)
+        params.require(:user).permit(:lastname, :city, :email, :phone,
+                                    :password, :password_confirmation)
     end
 
     def signed_in_user

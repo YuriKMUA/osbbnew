@@ -2,8 +2,9 @@
   <nav class="navbar navbar-fixed-top navbar-inverse main-menu" role="navigation">
     <span class="navbar-header nav navbar-right">
       <ul class="nav navbar-nav">
-        <li><%= link_to " Реєстрація", "#", class: ["glyphicon glyphicon-user"] %></li>
-        <li><%= link_to" Вхід", signup_path, class: ["glyphicon glyphicon-log-in"] %></li>
+        <li> <%= link_to " Користувачі ", user_path(1), class: ["glyphicon glyphicon-sunglasses"] %></li>
+        <li><%= link_to " Реєстрація", signup_path, class: ["glyphicon glyphicon-user"] %></li>
+        <li><%= link_to " Вхід", "#", class: ["glyphicon glyphicon-log-in"] %></li>
       </ul>
     </span>   
   </nav>
