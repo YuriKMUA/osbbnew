@@ -20,7 +20,6 @@ gem 'rack-test' # => , '0.6.3'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
-# Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -79,6 +78,9 @@ end
 group :production do 
   gem 'pg'
   gem 'fog', '1.42'
+  # Use Puma as the app server
+  gem 'puma', '~> 3.11'
+
 end
 
 group :test do
